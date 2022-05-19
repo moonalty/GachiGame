@@ -7,25 +7,34 @@ const saltRounds = 3;
 
 //
 router.route("/").get(async (req, res) => {
-  const q = await Theme.findOne({ where: { id: 1 } });
-  res.render("index", { q });
-});
+  console.log();
+
+  res.json({ lo: "wadwadawdawdawdwadawdawdawdaw" });
+})
+
+// //
+// router.route("/main").get((req, res) => {
+//   res.render("main");
+// });
+
+router.route('/gameForm')
+.get(async(req, res)=> {
+  const theme = await Theme.findAll()
+  res.json(theme)
+})
 
 //
-router.route("/main").get((req, res) => {
-  res.render("main");
-});
-
-//
-router.route("/login").get((req, res) => {
-  res.render("login");
-});
+// router.route("/login").get((req, res) => {
+//   res.render("login");
+// });
 
 //
 router
   .route("/registration")
   .get((req, res) => {
-    res.render("23232323232");
+    console.log();
+
+    res.json({ lo: "wadwadawdawdawdwadawdawdawdaw" });
   })
   .post(async (req, res) => {
     const { name, password, email } = req.body;
@@ -57,28 +66,39 @@ router
 router
   .route("/login")
   .get((req, res) => {
-    res.render("wadwadawdawvdsvsdawdwadawdawdawdaw");
+    console.log();
+
+    res.json({ lo: "wadwadawdadbgevwdawdwadawdawdawdaw" });
   })
   .post(async (req, res) => {
-    try {
-      const { email, password } = req.body;
-      const user = await User.findOne({
-        where: { email },
-      });
-      if (user) {
-        req.session.user = user;
-        const validPass = await bcrypt.compare(password, user.password);
-        if (!validPass) {
-          res.json({ message: `Incorrect password!` });
-        } else {
-          res.json({ message: "Welcome" });
-        }
-      } else {
-        res.json({ message: `User ${email} not found` });
-      }
-    } catch (error) {
-      res.json({ message: "Try later" });
-    }
+    console.log("AAAAAAAAAAAAAA",req.body);
+    const user = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      score:300,
+    });
+    res.json({ do: "kjfdh" });
+    // try {
+    //   const { email, password } = req.body;
+    //   console.log(req.body)
+    //   const user = await User.findOne({
+    //     where: { email },
+    //   });
+    //   if (user) {
+    //     req.session.user = user;
+    //     const validPass = await bcrypt.compare(password, user.password);
+    //     if (!validPass) {
+    //       res.json({ message: `Incorrect password!` });
+    //     } else {
+    //       res.json({ message: "Welcome" });
+    //     }
+    //   } else {
+    //     res.json({ message: `User ${email} not found` });
+    //   }
+    // } catch (error) {
+    //   res.json({ message: "Try later" });
+    // }
   });
 
 router.get("/logout", (req, res) => {

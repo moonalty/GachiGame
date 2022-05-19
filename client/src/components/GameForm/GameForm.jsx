@@ -1,34 +1,37 @@
-import React from 'react';
-import { Link } from "react-router-dom"
+import React, { useEffect } from 'react';
 import style from './gameForm.module.css'
-import {useState} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import ThemeCard from '../ThemeCard/ThemeCard';
+import { themesRenderAC } from '../../redux/actionCreator/themeAC';
+
 
 function GameForm() {
-  const {state, setState} = useState(false)
+  const { themes } = useSelector(state => state.themes)
+  console.log(themes);
+  const dispatch = useDispatch(store => store.themes)
+  // const { state, setState } = useState(false)
+
+
+  useEffect(() => {
+    fetch("/gameForm")
+      .then(res => res.json())
+      .then(data => console.log('puki', data))
+      .then(data => dispatch(themesRenderAC(data)))
+  }, [themes])
+
   return (
 
-<div>
-        <table className={style.table}>
+    <div>
+      <table className={style.table}>
         <tbody>
-        <tr>
-          <th scope="row"><Link to></Link>Gachi questions under 300$</th>
-            {/* <td><Link></Link>100</td>
-            <td><Link></Link>200</td>
-            <td><Link></Link>300</td>
-            <td><Link></Link>400</td> */}
-        </tr>
-        <tr>
-          <th scope="row">Elbrus</th>
+          <tr>
+            <th scope="row">{themes.map(theme => <ThemeCard key={themes.id} themeCard={theme} />)}</th>
+          </tr>
 
-        </tr>
-        <tr>
-          <th scope="row">Somethink</th>
-   
-        </tr>
         </tbody>
-      </table> 
-</div>
- 
+      </table>
+    </div>
+
   );
 }
 
