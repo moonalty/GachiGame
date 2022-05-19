@@ -1,13 +1,14 @@
 const router = require("express").Router();
-const { User } = require("../db/models");
+const { User, Question, Theme } = require("../db/models");
 //
 const bcrypt = require("bcrypt");
 const saltRounds = 3;
 //
 
 //
-router.route("/").get((req, res) => {
-  res.render("index");
+router.route("/").get(async (req, res) => {
+  const q = await Theme.findOne({ where: { id: 1 } });
+  res.render("index", { q });
 });
 
 //
