@@ -9,6 +9,7 @@ import React from 'react';
 import Login from '../Login/Login';
 import Home from '../Home/Home'
 import GameForm from '../GameForm/GameForm';
+import Registration from '../Registration/Registration';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes >
-            <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
           <Route path='/' element={<Home />} />
           <Route path='/gameForm' element = {<GameForm/>}/>
         </Routes>
