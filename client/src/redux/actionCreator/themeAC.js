@@ -1,8 +1,8 @@
-import { THEMES } from "../actionTypes/themesAT"
+import { SHOW_THEMES } from "../actionTypes/themesAT";
 
 export const themesRenderAC = (payload) => {
   return {
-    type: THEMES,
-    payload
-  }
-}
+    type: SHOW_THEMES,
+    payload,
+  };
+};

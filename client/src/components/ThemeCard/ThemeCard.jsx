@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from "react-router-dom"
-function ThemeCard({ el }) {
-  console.log('ELEMENT>>>>', el);
+import React from "react";
+import { Link } from "react-router-dom";
+function ThemeCard({ theme }) {
+  console.log("ELEMENT>>>>", theme);
   return (
-    <div>
-      <Link to={`/gameForm/theme/quest/${el.id}`}>{el.name}</Link>
+    <div className="oneTheme">
+      <Link to={`/gameForm/theme/quest/${theme.id}`}>{theme.name}</Link>
     </div>
   );
 }
