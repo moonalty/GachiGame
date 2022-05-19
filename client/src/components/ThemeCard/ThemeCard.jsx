@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
 function ThemeCard({ theme }) {
-  console.log("ELEMENT>>>>", theme);
   return (
     <div className="oneTheme">
-      <Link to={`/gameForm/theme/quest/${theme.id}`}>{theme.name}</Link>
+      <Modal theme={theme} />
     </div>
   );
 }
 
 export default ThemeCard;
+
+{
+  /* <Link to={`/gameForm/theme/quest/${theme.id}`}>{theme.name}</Link> */
+}
