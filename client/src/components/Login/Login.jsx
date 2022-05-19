@@ -12,8 +12,8 @@ function Login(props) {
     const data = { name: e.target.name.value, email: e.target.email.value, password: e.target.password.value }
 
     fetch("/login", {
-      headers: { "content-type": "application/json" },
       method: "POST",
+      headers: { "content-type": "application/json" },
       body: JSON.stringify(data)
     })
       .then(res => res.json())
@@ -26,26 +26,26 @@ function Login(props) {
 
   return (
       <div className='login'>
-        <form>
+      <form onSubmit={addUser}>
           <div className="row mb-3">
-            <label for="inputEmail3" className="col-sm-2 col-form-label">Name</label>
+            <label className="col-sm-2 col-form-label">Name</label>
             <div className="col-sm-10">
               <input type="text" className="form-control" id="name" />
             </div>
           </div>
           <div className="row mb-3">
-            <label for="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+            <label className="col-sm-2 col-form-label">Email</label>
             <div className="col-sm-10">
               <input type="email" className="form-control" id="email" />
             </div>
           </div>
           <div className="row mb-3">
-            <label for="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+            <label className="col-sm-2 col-form-label">Password</label>
             <div className="col-sm-10">
-              <input type="password" minlength="8" className="form-control" id="password" />
+              <input type="password" minLength="8" className="form-control" id="password" />
             </div>
           </div>
-          <button type="submit" className="btn btn-primary" onSubmit={addUser}>Sign in</button>
+          <button type="submit" className="btn btn-primary">Sign in</button>
         </form>
       </div>
   );

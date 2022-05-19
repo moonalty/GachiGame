@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const cors = require('cors');
 
 const sessionConfig = require("./sessionConfig");
 const signUpCheck = require("../middlewares/authUser");
@@ -18,6 +19,8 @@ const config = (app) => {
 
   app.use(session(sessionConfig));
   app.use(signUpCheck);
+  app.use(cors());
+
 };
 
 module.exports = config;
