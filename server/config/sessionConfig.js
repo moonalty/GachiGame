@@ -8,7 +8,7 @@ const sessionConfig = {
   resave: true,
   saveUnitialized: true,
   cookie: {
-    maxAge: 1000 * 60 * 60, // 1 час сессии
+    maxAge: 1000 * 60 * 60* 24, // 1 час сессии
     httpOnly: true,
   },
 };
