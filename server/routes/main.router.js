@@ -70,7 +70,7 @@ router
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
-      score:300,
+      score: 300,
     });
     res.json({ do: "kjfdh" });
     // try {
