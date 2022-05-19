@@ -1,0 +1,10 @@
+.oneTheme{
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgb(34, 91, 72);
+  border: 1px solid teal;
+  border-radius: 15%;
+
+}

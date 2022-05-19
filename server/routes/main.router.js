@@ -67,7 +67,6 @@ router
   .route("/login")
   .get((req, res) => {
     console.log();
-
     res.json({ lo: "wadwadawdadbgevwdawdwadawdawdawdaw" });
   })
   .post(async (req, res) => {
