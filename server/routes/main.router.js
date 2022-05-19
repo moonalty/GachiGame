@@ -12,10 +12,16 @@ router.route("/").get(async (req, res) => {
   res.json({ lo: "wadwadawdawdawdwadawdawdawdaw" });
 })
 
-//
-router.route("/main").get((req, res) => {
-  res.render("main");
-});
+// //
+// router.route("/main").get((req, res) => {
+//   res.render("main");
+// });
+
+router.route('/gameForm')
+.get(async(req, res)=> {
+  const theme = await Theme.findAll()
+  res.json(theme)
+})
 
 //
 // router.route("/login").get((req, res) => {
