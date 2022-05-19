@@ -1,8 +1,8 @@
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { store as globalStore } from '../../redux/store'
-import { Provider } from 'react-redux'
+// import { store as globalStore } from '../../redux/store'
+// import { Provider } from 'react-redux'
 import Nav from '../Nav/Nav'
 
 import React from 'react';
@@ -13,7 +13,7 @@ import GameForm from '../GameForm/GameForm';
 function App() {
   return (
     <>
-    <Provider store={globalStore}>
+    {/* <Provider store={globalStore}> */}
       <BrowserRouter>
         <Nav />
         <Routes >
@@ -22,7 +22,7 @@ function App() {
           <Route path='/gameForm' element = {<GameForm/>}/>
         </Routes>
       </BrowserRouter>
-      </Provider>
+      {/* </Provider> */}
     </>
   );
 }
