@@ -62,7 +62,7 @@ router
   .get((req, res) => {
     console.log();
 
-    res.json({ lo: "wadwadawdawdawdwadawdawdawdaw" });
+    res.json({ lo: "wadwadawdadbgevwdawdwadawdawdawdaw" });
   })
   .post(async (req, res) => {
     console.log("AAAAAAAAAAAAAA",req.body);
