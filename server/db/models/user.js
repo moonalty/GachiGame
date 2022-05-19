@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.TEXT
     },
-    scrore: {
+    score: {
       type: DataTypes.INTEGER
     },
   }, {

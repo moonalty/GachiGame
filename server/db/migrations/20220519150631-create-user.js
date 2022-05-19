@@ -17,7 +17,7 @@ module.exports = {
       email: {
         type: Sequelize.TEXT
       },
-      scrore: {
+      score: {
         type: Sequelize.INTEGER
       },
       createdAt: {
