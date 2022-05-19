@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GameForm() {
+function QuestCard(props) {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function GameForm() {
   );
 }
 
-export default GameForm;
+export default QuestCard;

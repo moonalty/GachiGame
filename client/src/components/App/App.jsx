@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import Nav from '../Nav/Nav'
 import Home from '../Home/Home'
 import GameForm from '../GameForm/GameForm';
+import QuestCard from '../QuestCard/QuestCard';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/gameForm' element = {<GameForm/>}/>
+          <Route path='/gameForm/:id' element = {<QuestCard/>}/>
         </Routes>
       </BrowserRouter>
     </Provider>
