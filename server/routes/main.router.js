@@ -17,15 +17,15 @@ router.route("/main").get((req, res) => {
 });
 
 //
-router.route("/signin").get((req, res) => {
-  res.render("signin");
+router.route("/login").get((req, res) => {
+  res.render("login");
 });
 
 //
 router
-  .route("/signup")
+  .route("/registration")
   .get((req, res) => {
-    res.render("signup");
+    res.render("23232323232");
   })
   .post(async (req, res) => {
     const { name, password, email } = req.body;
@@ -55,9 +55,9 @@ router
 //
 
 router
-  .route("/signin")
+  .route("/login")
   .get((req, res) => {
-    res.render("signin");
+    res.render("wadwadawdawdawdwadawdawdawdaw");
   })
   .post(async (req, res) => {
     try {
@@ -85,7 +85,7 @@ router.get("/logout", (req, res) => {
   try {
     req.session.destroy();
     res.clearCookie("user_sid");
-    res.redirect("/");
+    // res.redirect("/");
   } catch (error) {
     res.end();
   }
