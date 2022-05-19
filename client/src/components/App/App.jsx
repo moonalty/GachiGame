@@ -14,16 +14,16 @@ import QuestCard from '../QuestCard/QuestCard';
 function App() {
   return (
     <>
-    <Provider store={globalStore}>
-      <BrowserRouter>
-        <Nav />
-        <Routes >
+      <Provider store={globalStore}>
+        <BrowserRouter>
+          <Nav />
+          <Routes >
             <Route path="/login" element={<Login />} />
-          <Route path='/' element={<Home />} />
-          <Route path='/gameForm' element = {<GameForm/>}/>
-          <Route path='/gameForm/:id' element = {<QuestCard/>}/>
-        </Routes>
-      </BrowserRouter>
+            <Route path='/' element={<Home />} />
+            <Route path='/gameForm' element={<GameForm />} />
+            <Route path='/gameForm/:id' element={<QuestCard />} />
+          </Routes>
+        </BrowserRouter>
       </Provider>
     </>
   );
