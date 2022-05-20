@@ -6,8 +6,9 @@ const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
     e.preventDefault();
     const otvet = e.target.modalInput.value;
     console.log("OTVET", otvet);
+    console.log('ETO VAJNO>>>>>>>>>', otvet.toLowerCase());
     console.log("thisELE>>>>>", el);
-    if (toString(otvet.toLowerCase()) === toString(el.answer.toLowerCase())) {
+    if (otvet.toLowerCase() === el.el.answer.toLowerCase()) {
       alert("OK!!!!");
     } else {
       alert("NO!!!");
@@ -25,7 +26,7 @@ const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
         className="modal__content"
         onClick={(e) => e.stopPropagation()}
       >
-        {el.name}
+        {el.el.name}
         <input className="inputik" type="text" name="modalInput" />
         <button type="submit" className="knopka1">
           Ответить
