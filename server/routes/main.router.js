@@ -60,7 +60,7 @@ router
           password: hashPassword,
         });
         req.session.user = user;
-        res.json({ message: "Welcome!" });
+        res.json({ message: "Welcome!", user });
       }
     } catch (error) {
       res.json({ message: "Try later" });
@@ -72,7 +72,7 @@ router
   .route("/login")
   .get((req, res) => {
     console.log();
-    res.json({ lo: "wadwadawdadbgevwdawdwadawdawdawdaw" });
+    res.json({ user:req.session.user });
   })
   .post(async (req, res) => {
     // console.log("AAAAAAAAAAAAAA",req.body);
