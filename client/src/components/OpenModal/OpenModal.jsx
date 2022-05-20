@@ -3,26 +3,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { costsRenderAC } from "../../redux/actionCreator/costsAC";
 import QuestCard from "../QuestCard/QuestCard";
 
-const OpenModal = ({ active, setActive, theme }) => {
-  // const dispatch = useDispatch((store) => store.costs)
-  // const { costs } = useSelector((state) => state.costs);
+const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
+  const answer = (e) => {
+    e.preventDefault();
+    const otvet = e.target.modalInput.value;
+    console.log("OTVET", otvet);
+    console.log("thisELE>>>>>", el);
+    if (toString(otvet.toLowerCase()) === toString(el.answer.toLowerCase())) {
+      alert("OK!!!!");
+    } else {
+      alert("NO!!!");
+    }
 
-  // useEffect(() => {
-  //   fetch('gameForm/themes/costs/:id')
-  //   .then((res)=> res.json())
-  //   .then((data)=> console.log(data))
-  //   .then((data) => dispatch(costsRenderAC(data)))
-  // })
-
-  console.log('BUKA');
   return (
     <div
       className={active ? "modal active" : "modal"}
       onClick={() => setActive(false)}
-    >
-      <div className="modal__content" onClick={(e) => e.stopPropagation()}>
-        <QuestCard theme = {theme} />
-      </div>
     </div>
   );
 };

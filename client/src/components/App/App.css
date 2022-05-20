@@ -1,12 +1,36 @@
 .oneTheme{
-  display: flex;
+  /* display: flex;
   justify-content: center;
   margin: 5px;
   padding: 5px;
   background-color: rgb(34, 91, 72);
   border: 1px solid teal;
-  border-radius: 15%;
+  border-radius: 15%; */
 
+}
+.pshka{
+  border: 1px solid black;
+  margin: 1px;
+  padding: 1px;
+}
+.tBox{
+  display: flex;
+  margin: 1px;
+  width: 700px;
+  padding: 1px;
+  justify-content:space-evenly;
+  border: 1px solid black;
+}
+
+.qBox{
+  display: flex;
+  margin: 1px;
+  width: 100px;
+  padding: 1px;
+  justify-content:space-between;
+  border: 1px solid green;
+}
+.tdshka{
 }
 /* .modal__wrapper{
   position: fixed;
@@ -49,16 +73,54 @@
   align-items: center;
   justify-content: center;
   transform: scale(0);
-  transition: 0,5;
+  transition: 1s;
 }
 
+/* .inputik{
+  width: 50%;
+  background-color: black;
+  height: 100px;
+} */
+
+.knopka1{
+  display: flex;
+  width: 150px;
+  height: 40px;
+  background-color: aquamarine;
+  border-radius: 25%;
+  color: coral;
+  justify-content: center;
+  align-items: center;
+}
 .modal__content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 20px;
   border-radius: 12px;
-  background-color: white;
+  background-color: rgb(250, 194, 194);
   height: 1100px;
   width: 1100px;
+  color: black;
 }
 .modal.active{
   transform: scale(1);
+}
+
+.mainBox{
+  display: flex;
+  border: 1px solid teal;
+  background-color: aliceblue;
+
+  /* align-items: center;
+  justify-content: center; */
+}
+
+
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }

@@ -34,6 +34,7 @@
     "hbs": "^4.2.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
+    "random-words": "^1.1.2",
     "sequelize": "^6.19.2",
     "sequelize-cli": "^6.4.1",
     "session-file-store": "^1.5.0"

@@ -1,5 +1,5 @@
 "use strict";
-
+const randomWord = require("random-words");
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
@@ -10,12 +10,16 @@ module.exports = {
           name: "Аниме и гачимучи связаны?",
           answer: "Да",
           cost: 100,
+          name: randomWord(1),
+          answer: "text",
+          cost: 300,
           theme_id: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           id: 2,
+
           name: "Кто босс качалки?",
           answer: "Билли Харингтон",
           cost: 200,
@@ -47,7 +51,7 @@ module.exports = {
           answer: "Алексей",
           cost: 200,
           theme_id: 2,
-          createdAt: new Date(),
+      createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
@@ -64,7 +68,7 @@ module.exports = {
           name: "Что значит зеленый код из матрицы?",
           answer: "Рецепт суши",
           cost: 100,
-          theme_id: 3,
+          theme_id: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -73,7 +77,6 @@ module.exports = {
           name: "Где снимали Властелин колец?",
           answer: "В Новой Зеландии",
           cost: 200,
-          theme_id: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -86,6 +89,7 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+
       ],
       {}
     );
