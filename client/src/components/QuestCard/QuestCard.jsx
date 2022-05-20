@@ -1,7 +1,7 @@
-
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import OpenModal from "../OpenModal/OpenModal";
+import Question from "../Question/Question";
 
 function QuestCard({ question, idQ, idT }) {
   console.log("Q>>>>>>>>>>>", question);
@@ -11,7 +11,7 @@ function QuestCard({ question, idQ, idT }) {
   // const { questions } = useSelector((state) => state.questions);
 
   const rightQ = question.filter((el) => el.theme_id === idT);
-  console.log(rightQ);
+  // console.log(rightQ);
   return (
     <div className="tBox">
       {/* <p onClick={() => setModalActive(true)}>{question.cost}</p> */}
@@ -22,16 +22,17 @@ function QuestCard({ question, idQ, idT }) {
     setActive={setModalActive}
   /> */}
       {rightQ.map((el) => (
-        <>
-          <p onClick={() => setModalActive(true)} className="pshka">
-            {el.cost}
-          </p>
-          <OpenModal
-            el={el}
-            active={modalActive}
-            setActive={setModalActive}
-          />
-        </>
+        <Question el={el} />
+        // <>
+        //   <p onClick={() => setModalActive(true)} className="pshka">
+        //     {el.cost}
+        //   </p>
+        //   <OpenModal
+        //     el={el}
+        //     active={modalActive}
+        //     setActive={setModalActive}
+        //   />
+        // </>
       ))}
     </div>
   );
