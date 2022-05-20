@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   const { user } = useSelector((state) => {
-    console.log(state);
     return state;
   });
+  console.log("JOPAAAAAAA", user.user);
   // console.log('как же я заебался',state);
   // const [state, setState] = useState(false)
-  // const userName = user && user.user && user.user.user && user.user.user.name;
-  
+  const userName = user && user.user && user.user.user && user.user.user.name;
+
   // console.log(userName);
+  
   return (
     <nav>
       <div className="nav-wrapper  brown lighten-2  " id="Nav">
@@ -19,9 +20,8 @@ function Nav() {
           Home
         </Link>
         <ul id="nav-mobile">
-          {user.length === 0 ? (
+          {userName ? (
             <>
-              {" "}
               <li>
                 <Link to="/registration">
                   <h5 className="black-text">Registration</h5>

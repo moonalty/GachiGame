@@ -21,7 +21,7 @@ function App() {
       <BrowserRouter>
         <Nav />
         <Routes>
-          {/* <Route path="/logput" */}
+          {/* <Route path="/logput"  */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />

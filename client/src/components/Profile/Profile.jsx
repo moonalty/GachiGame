@@ -5,7 +5,6 @@ import { profileAC } from '../../redux/actionCreator/profileAC';
 
 function Profile() {
 console.log('here');
-  const score = 0
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state)
   console.log('USER!!!!!', user);
@@ -20,15 +19,12 @@ console.log('here');
 
   return (
     <div>
-      <ul>    
+      <ul id="ulka">    
         <li>
           UserEmail: {user && user.user && user.user.user && user.user.user.email}
         </li>
         <li>
           UserName: {user && user.user && user.user.user && user.user.user.name}
-        </li>
-        <li>
-          Score: {score}
         </li>
 
       </ul>
