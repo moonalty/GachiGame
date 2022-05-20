@@ -1,9 +1,12 @@
-import React from 'react';
-import './Registration.css'
+import React, { useState } from 'react';
+import './Registration.css';
+import { Link } from "react-router-dom"
+
 
 function Registration(props) {
 
   // const dispatch = useDispatch();
+  const [res, setRes] = useState('');
 
   const addUser = (e) => {
 
@@ -18,7 +21,9 @@ function Registration(props) {
     })
       .then(res => res.json())
       // .then(data => dispatch(addStudentsAC(data)))
-      .then(data => console.log(data))
+      .then(data => setRes(data.message))
+    
+    console.log(res)
 
     // dispatch({type:"ADD_STUDENT",payload:data})
   }
@@ -45,6 +50,7 @@ function Registration(props) {
             <input type="password" minLength="8" className="form-control" id="password" />
           </div>
         </div>
+        { res==="Welcome!" ? <p>Welcome! Go to <Link to='/login'>login</Link></p> : <p>{ res }</p>}
         <button type="submit" className="btn btn-primary">Sign in</button>
       </form>
     </div>

@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
 function Login(props) {
 
+  const navigation = useNavigate()
+  const [res, setRes] = useState('');
+
   // const dispatch = useDispatch();
 
   const addUser = (e) => {
-
+    
     e.preventDefault();
-
-    const navigation = useNavigate()
 
     const data = { name: e.target.name.value, email: e.target.email.value, password: e.target.password.value }
 
@@ -21,12 +22,18 @@ function Login(props) {
     })
       .then(res => res.json())
       // .then(data => dispatch(addStudentsAC(data)))
-      .then(data => console.log(data))
+      .then(data => setRes(data.message))
+    console.log(res)
 
+    if (res === "Welcome") { return navigation('/') }
+    
     e.target.reset()
     // dispatch({type:"ADD_STUDENT",payload:data})
   }
 
+  // const knopka = () => { 
+  //   if (res === "Welcome") { return navigation('/')}
+  // }
 
   return (
       <div className='login'>
@@ -42,7 +49,8 @@ function Login(props) {
             <div className="col-sm-10">
               <input type="password" minLength="8" className="form-control" id="password" />
             </div>
-          </div>
+        </div>
+        {res !== "Welcome" && <p>{res}</p> }
           <button type="submit" className="btn btn-primary">Sign in</button>
         </form>
       </div>
