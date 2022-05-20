@@ -4,23 +4,35 @@ import { profileAC } from '../../redux/actionCreator/profileAC';
 
 
 function Profile() {
-const dispatch = useDispatch()
-const {user} = useSelector((state) => state.user)
-console.log('USER!!!!!',user);
+console.log('here');
+  const score = 0
+  const dispatch = useDispatch()
+  const { user } = useSelector((state) => state)
+  console.log('USER!!!!!', user);
   useEffect(() => {
+    console.log('PROF')
     fetch("/login")
       .then((res) => res.json())
-      .then((data) => dispatch(profileAC(data)));
+      .then((data) => {
+        console.log(data);
+        dispatch({type:'PROFILE', payload:data})});
   }, []);
 
   return (
     <div>
-      <ul>
-      <li>
-      {user[0].name}
-      </li>
+      <ul>    
+        <li>
+          UserEmail: {user?.user?.user?.email}
+        </li>
+        <li>
+          UserName: {user?.user?.user?.name}
+        </li>
+        <li>
+          Score: {score}
+        </li>
+
       </ul>
-      
+
     </div>
   );
 }

@@ -33,7 +33,7 @@ function Home() {
         id="gamePoint"
         className="waves-effect waves-light btn-large"
       >
-        Cum
+        Play
       </Link>
     </div>
   );

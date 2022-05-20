@@ -21,13 +21,11 @@ function Login(props) {
       body: JSON.stringify(data)
     })
       .then(res => res.json())
+      
       // .then(data => dispatch(addStudentsAC(data)))
-      .then(data => setRes(data.message))
-    console.log(res)
-
-    if (res === "Welcome") { return navigation('/') }
-    
-    e.target.reset()
+      .then(data => data.message==='Welcome'?navigation('/'):navigation('/registration'))
+   
+  
     // dispatch({type:"ADD_STUDENT",payload:data})
   }
 

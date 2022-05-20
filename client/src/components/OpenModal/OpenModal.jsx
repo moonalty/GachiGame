@@ -15,12 +15,13 @@ const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
       alert("NO!!!");
     }
 
-  return (
-    <div
-      className={active ? "modal active" : "modal"}
-      onClick={() => setActive(false)}
-    </div>
+    return (
+      <div
+        className={active ? "modal active" : "modal"}
+        onClick={() => setActive(false)}>
+  </div>
   );
 };
+}
 
 export default OpenModal;
