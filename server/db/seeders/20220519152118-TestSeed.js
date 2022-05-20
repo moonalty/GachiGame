@@ -11,6 +11,30 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          id: 2,
+          name: "joka",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 3,
+          name: "jojo",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 4,
+          name: "boji",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 5,
+          name: "Елизавета Сергеевна",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );

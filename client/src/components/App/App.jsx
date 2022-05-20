@@ -1,31 +1,34 @@
-import 'materialize-css/dist/css/materialize.min.css';
-import 'materialize-css/dist/js/materialize.min';
+import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/js/materialize.min";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { store as globalStore } from '../../redux/store'
-// import { Provider } from 'react-redux'
-import Nav from '../Nav/Nav'
-
-import React from 'react';
-import Login from '../Login/Login';
-import Home from '../Home/Home'
-import GameForm from '../GameForm/GameForm';
+import { store as globalStore } from "../../redux/store";
+import { Provider } from "react-redux";
+import Nav from "../Nav/Nav";
+import React from "react";
+import Login from "../Login/Login";
 import Registration from '../Registration/Registration';
+import Home from "../Home/Home";
+import GameForm from "../GameForm/GameForm";
+import QuestCard from "../QuestCard/QuestCard";
+import ThemeCard from "../ThemeCard/ThemeCard";
+
 
 function App() {
   return (
-    <>
-    {/* <Provider store={globalStore}> */}
+    <Provider store={globalStore}>
       <BrowserRouter>
         <Nav />
-        <Routes >
+        <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path='/' element={<Home />} />
-          <Route path='/gameForm' element = {<GameForm/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/gameForm" element={<GameForm />} />
+          <Route path="/gameForm/theme/quest/:id" element={<QuestCard />} />
+          <Route path="/gameForm/themes/:id" element={<ThemeCard />} />
         </Routes>
       </BrowserRouter>
-      {/* </Provider> */}
-    </>
+    </Provider>
   );
 }
 
