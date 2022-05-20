@@ -15,24 +15,10 @@ const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
       alert("NO!!!");
     }
 
-    setActive(false);
-  };
   return (
     <div
       className={active ? "modal active" : "modal"}
       onClick={() => setActive(false)}
-    >
-      <form
-        onSubmit={answer}
-        className="modal__content"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {el.name}
-        <input className="inputik" type="text" name="modalInput" />
-        <button type="submit" className="knopka1">
-          Ответить
-        </button>
-      </form>
     </div>
   );
 };

@@ -13,7 +13,7 @@ import GameForm from "../GameForm/GameForm";
 import QuestCard from "../QuestCard/QuestCard";
 import ThemeCard from "../ThemeCard/ThemeCard";
 import OpenModal from "../OpenModal/OpenModal";
-
+import Profile from '../Profile/Profile'
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
           <Route path="/gameForm/theme/quest/:id" element={<QuestCard />} />
           <Route path="/gameForm/themes/:id" element={<ThemeCard />} />
           <Route path="/gameForm/themes/:id/costs" element={<OpenModal/>}/>
+          <Route path="/profile" element={<Profile/>}/>
         </Routes>
       </BrowserRouter>
     </Provider>
