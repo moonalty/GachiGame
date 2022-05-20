@@ -9,7 +9,7 @@ function ThemeCard({ theme, id }) {
   return (
     <div className="qBox">
       <div className="oneTheme">
-        <div onClick={() => setModalActive(true)}>{theme.name}</div>
+        <div className="textBox" onClick={() => setModalActive(true)}>{theme.name}</div>
       </div>
       {/* <OpenModal
         idQ={questions}

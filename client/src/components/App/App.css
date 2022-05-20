@@ -8,27 +8,48 @@
   border-radius: 15%; */
 
 }
-.pshka{
-  border: 1px solid black;
+ .textBox{
+  font-size: 40px;
+  color: rgb(231, 231, 241);
+ }
+.newTbox{
+
+  font-size: 30px;
+  display: flex;
+  flex: 0 1 33%;
   margin: 1px;
   padding: 1px;
 }
+.pshka{
+  font-size: 40px;
+  color: rgb(245, 245, 249);
+  display: flex;
+  border-radius: 100%;
+  border: 3px solid rgb(84, 229, 229);
+  flex: 0 1 33%;
+  margin: 20px;
+  padding: 10px;
+}
 .tBox{
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin: 1px;
-  width: 700px;
+  width: 300px;
   padding: 1px;
-  justify-content:space-evenly;
-  border: 1px solid black;
+  justify-content:space-around;
+  /* border: 1px solid black; */
 }
 
 .qBox{
   display: flex;
+  flex: 0 1 33%;
+  align-items: center;
   margin: 1px;
   width: 100px;
   padding: 1px;
-  justify-content:space-between;
-  border: 1px solid green;
+  justify-content:space-around;
+  /* border: 1px solid green; */
 }
 .tdshka{
 }
@@ -87,7 +108,6 @@
   width: 150px;
   height: 40px;
   background-color: aquamarine;
-  border-radius: 25%;
   color: coral;
   justify-content: center;
   align-items: center;
@@ -109,18 +129,36 @@
 }
 
 .mainBox{
+  height: 100px;
   display: flex;
-  border: 1px solid teal;
-  background-color: aliceblue;
+  justify-content: space-around;
+  flex: 0 1 33%;
+  background: rgba(239, 147, 147, 0.6);
+  
 
   /* align-items: center;
   justify-content: center; */
 }
 
+.superMainBox{
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column;
+  height: 800px;
+  width: 900px;
 
+
+}
 .box{
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+
+
+}
+.scoreDiv{
+  margin: 0 auto;
+  font-size: 40px;
 
 }
