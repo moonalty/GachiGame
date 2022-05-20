@@ -1,15 +1,36 @@
 import React from "react";
 import QuestCard from "../QuestCard/QuestCard";
 
-const OpenModal = ({ active, setActive, theme }) => {
+const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
+  const answer = (e) => {
+    e.preventDefault();
+    const otvet = e.target.modalInput.value;
+    console.log("OTVET", otvet);
+    console.log("thisELE>>>>>", el);
+    if (toString(otvet.toLowerCase()) === toString(el.answer.toLowerCase())) {
+      alert("OK!!!!");
+    } else {
+      alert("NO!!!");
+    }
+
+    setActive(false);
+  };
   return (
     <div
       className={active ? "modal active" : "modal"}
       onClick={() => setActive(false)}
     >
-      <div className="modal__content" onClick={(e) => e.stopPropagation()}>
-        <QuestCard />
-      </div>
+      <form
+        onSubmit={answer}
+        className="modal__content"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {el.name}
+        <input className="inputik" type="text" name="modalInput" />
+        <button type="submit" className="knopka1">
+          Ответить
+        </button>
+      </form>
     </div>
   );
 };

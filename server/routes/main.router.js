@@ -6,23 +6,23 @@ const saltRounds = 3;
 //
 
 //
-router.route("/").get(async (req, res) => {
-  console.log();
-
-  res.json({ lo: "wadwadawdawdawdwadawdawdawdaw" });
-})
+router.route("/home").get(async (req, res) => {
+  const questions = await Question.findAll();
+  console.log(questions);
+  // res.json(questions);
+  res.json(questions);
+});
 
 // //
 // router.route("/main").get((req, res) => {
 //   res.render("main");
 // });
 
-router.route('/gameForm')
-.get(async(req, res)=> {
-  const theme = await Theme.findAll()
-  res.json(theme)
-})
-
+router.route("/gameForm").get(async (req, res) => {
+  const theme = await Theme.findAll();
+  res.json(theme);
+});
+//
 //
 // router.route("/login").get((req, res) => {
 //   res.render("login");
@@ -70,7 +70,7 @@ router
     res.json({ lo: "wadwadawdadbgevwdawdwadawdawdawdaw" });
   })
   .post(async (req, res) => {
-    console.log("AAAAAAAAAAAAAA",req.body);
+    console.log("AAAAAAAAAAAAAA", req.body);
     const user = await User.create({
       name: req.body.name,
       email: req.body.email,

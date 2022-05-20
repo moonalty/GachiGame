@@ -19,7 +19,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/gameForm" element={<GameForm />} />
           <Route path="/gameForm/theme/quest/:id" element={<QuestCard />} />
           <Route path="/gameForm/themes/:id" element={<ThemeCard />} />

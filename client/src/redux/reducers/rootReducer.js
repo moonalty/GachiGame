@@ -4,6 +4,6 @@ import {questReducer} from './questReducer'
 import { themesReducer } from './themesReducer'
 
 export const rootReducer = combineReducers({
-  questCard: questReducer,
+  questions: questReducer,
   themes: themesReducer
 })
