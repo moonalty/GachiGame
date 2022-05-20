@@ -23,6 +23,12 @@ router.route('/gameForm')
   res.json(theme)
 })
 
+router.route('/gameForm/themes/costs/:id')
+.get(async (req, res)=> {
+  const costs = await Question.findAll({where: {id: req.params.id}})
+  res.json({costs})
+}) 
+
 //
 // router.route("/login").get((req, res) => {
 //   res.render("login");
@@ -33,7 +39,10 @@ router
   .route("/registration")
   .get((req, res) => {
     console.log();
-    res.json({ lo: "wadwadawdawdawdwadawdawdawdaw" });
+
+
+    res.json({ lo: "wadwadadfvdfvdvdwdawdawdwadawdawdawdaw" });
+
   })
   .post(async (req, res) => {
     const { name, password, email } = req.body;
