@@ -45,7 +45,7 @@ router
           password: hashPassword,
         });
         req.session.user = user;
-        res.json({ message: "Welcome" });
+        res.json({ message: "Welcome!" });
       }
     } catch (error) {
       res.json({ message: "Try later" });
