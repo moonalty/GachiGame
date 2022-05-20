@@ -7,6 +7,7 @@ function Home() {
   // const { themes } = useSelector((state) => state.themes);
   const { questions } = useSelector((state) => state.questions);
   console.log("questions!!!!>>>", questions);
+  
 
   // console.log("themes>>>>", themes);
   // console.log('QQQQQQ>>>>>',questions);
@@ -33,7 +34,7 @@ function Home() {
         id="gamePoint"
         className="waves-effect waves-light btn-large"
       >
-        Cum
+        Play
       </Link>
     </div>
   );

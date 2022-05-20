@@ -40,4 +40,5 @@ const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
   );
 };
 
+
 export default OpenModal;
