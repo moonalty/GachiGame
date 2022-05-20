@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Modal from "../Modal/Modal";
+// import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
 import OpenModal from "../OpenModal/OpenModal";
 import { useSelector } from "react-redux";
@@ -9,7 +9,9 @@ function ThemeCard({ theme, id }) {
   return (
     <div className="qBox">
       <div className="oneTheme">
-        <div className="textBox" onClick={() => setModalActive(true)}>{theme.name}</div>
+        <div className="textBox" onClick={() => setModalActive(true)}>
+          {theme.name}
+        </div>
       </div>
       {/* <OpenModal
         idQ={questions}

@@ -154,7 +154,7 @@
 
 .superMainBox{
   display: flex;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   flex-direction: column;
   height: 800px;
   width: 900px;
@@ -172,5 +172,7 @@
 .scoreDiv{
   margin: 0 auto;
   font-size: 40px;
-
+  color: rgb(20, 61, 61);
+  background-color: bisque;
+  padding: 10px;
 }

@@ -22,10 +22,10 @@ console.log('here');
     <div>
       <ul>    
         <li>
-          UserEmail: {user?.user?.user?.email}
+          UserEmail: {user && user.user && user.user.user && user.user.user.email}
         </li>
         <li>
-          UserName: {user?.user?.user?.name}
+          UserName: {user && user.user && user.user.user && user.user.user.name}
         </li>
         <li>
           Score: {score}
