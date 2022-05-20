@@ -1,21 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { scoreRenderAC, scoreMinusAC } from "../../redux/actionCreator/scoreAC";
 import { useDispatch, useSelector } from "react-redux";
-import { costsRenderAC } from "../../redux/actionCreator/costsAC";
-import QuestCard from "../QuestCard/QuestCard";
+// import QuestCard from "../QuestCard/QuestCard";
 
 const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
+  const { score } = useSelector((state) => state.score);
+  const dispatch = useDispatch((state) => state.score);
   const answer = (e) => {
     e.preventDefault();
     const otvet = e.target.modalInput.value;
     console.log("OTVET", otvet);
-    console.log('ETO VAJNO>>>>>>>>>', otvet.toLowerCase());
+    console.log("ETO VAJNO>>>>>>>>>", otvet.toLowerCase());
     console.log("thisELE>>>>>", el);
     if (otvet.toLowerCase() === el.el.answer.toLowerCase()) {
-      alert("OK!!!!");
+      dispatch(scoreRenderAC(el.el.cost));
     } else {
-      alert("NO!!!");
+      dispatch(scoreMinusAC(el.el.cost));
     }
 
+    setActive(false);
+  };
   return (
     <div
       className={active ? "modal active" : "modal"}
