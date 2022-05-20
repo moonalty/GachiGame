@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
+import OpenModal from "../OpenModal/OpenModal";
 function ThemeCard({ theme }) {
+  const [modalActive, setModalActive] = useState(false);
   return (
-    <div className="oneTheme">
-      <Modal theme={theme} />
-    </div>
+    <>
+      <div className="oneTheme">
+        <p onClick={() => setModalActive(true)}>{theme.name}</p>
+      </div>
+      <OpenModal
+        theme={theme}
+        active={modalActive}
+        setActive={setModalActive}
+      />
+    </>
   );
 }
 

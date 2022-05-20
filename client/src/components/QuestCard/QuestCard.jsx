@@ -1,9 +1,9 @@
 import React from 'react';
 
-function QuestCard(props) {
+function QuestCard() {
   return (
     <div>
-      
+      dawawdaw
     </div>
   );
 }
