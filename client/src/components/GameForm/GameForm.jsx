@@ -31,17 +31,17 @@ function GameForm() {
 
   return (
     <>
-    <div>SCORE: {score}</div>
-    <div className="box">
-      <div>
-        {themes.map((theme) => (
-          <div className="mainBox">
-            <ThemeCard key={theme.id} theme={theme} id={theme.id} />
-            <QuestCard idT={theme.id} question={questions} />
-          </div>
-        ))}
-      </div>
-      {/* <div className="tdshka">
+      <div className="scoreDiv">SCORE: {score}</div>
+      <div className="box">
+        <div className="superMainBox">
+          {themes.map((theme) => (
+            <div className="mainBox">
+              <ThemeCard key={theme.id} theme={theme} id={theme.id} />
+              <QuestCard idT={theme.id} question={questions} />
+            </div>
+          ))}
+        </div>
+        {/* <div className="tdshka">
         {questions.map((question) => (
           <QuestCard
           key={question.id}
@@ -51,8 +51,8 @@ function GameForm() {
           />
           ))}
         </div> */}
-    </div>
-        </>
+      </div>
+    </>
   );
 }
 
