@@ -20,7 +20,19 @@
   margin: 1px;
   padding: 1px;
 }
-.pshka{
+.off{
+  font-size: 40px;
+  background-color: darkslategrey;
+  color: rgb(245, 245, 249);
+  display: flex;
+  border-radius: 100%;
+  border: 3px solid rgb(20, 131, 131);
+  flex: 0 1 33%;
+  margin: 20px;
+  padding: 10px;
+  
+}
+.on{
   font-size: 40px;
   color: rgb(245, 245, 249);
   display: flex;

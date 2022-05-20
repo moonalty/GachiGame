@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { scoreRenderAC, scoreMinusAC } from "../../redux/actionCreator/scoreAC";
 import { useDispatch, useSelector } from "react-redux";
 // import QuestCard from "../QuestCard/QuestCard";
 
-const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
+const OpenModal = ({
+  active,
+  setActive,
+  theme,
+  question,
+  idQ,
+  el,
+  name,
+  setStateA,
+  stateA,
+  lock,
+}) => {
   const { score } = useSelector((state) => state.score);
   const dispatch = useDispatch((state) => state.score);
   const answer = (e) => {
@@ -14,11 +25,13 @@ const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
     console.log("thisELE>>>>>", el);
     if (otvet.toLowerCase() === el.el.answer.toLowerCase()) {
       dispatch(scoreRenderAC(el.el.cost));
+      lock(setStateA);
     } else {
       dispatch(scoreMinusAC(el.el.cost));
-    }
+      lock(setStateA);
 
-    setActive(false);
+      setActive(false);
+    }
   };
   return (
     <div
