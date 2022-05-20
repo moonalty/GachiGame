@@ -5,6 +5,7 @@ import ThemeCard from "../ThemeCard/ThemeCard";
 import { themesRenderAC } from "../../redux/actionCreator/themeAC";
 import QuestCard from "../QuestCard/QuestCard";
 // import { questRenderAC } from "../../redux/actionCreator/questAC";
+import {Link} from "react-router-dom";
 
 function GameForm() {
   const { themes } = useSelector((state) => state.themes);
@@ -31,6 +32,8 @@ function GameForm() {
   return (
     <div className="box">
       <div >
+
+
         {themes.map((theme) => (
           <div className="mainBox">
           <ThemeCard key={theme.id} theme={theme} id={theme.id} />

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { costsRenderAC } from "../../redux/actionCreator/costsAC";
 import QuestCard from "../QuestCard/QuestCard";
 
 const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
@@ -14,8 +16,6 @@ const OpenModal = ({ active, setActive, theme, question, idQ, el, name }) => {
       alert("NO!!!");
     }
 
-    setActive(false);
-  };
   return (
     <div
       className={active ? "modal active" : "modal"}

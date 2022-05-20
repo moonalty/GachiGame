@@ -7,31 +7,19 @@ module.exports = {
       [
         {
           id: 1,
-          name: "joji",
+          name: "GachiQuest",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           id: 2,
-          name: "joka",
+          name: "Elbrus",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           id: 3,
-          name: "jojo",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          id: 4,
-          name: "boji",
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          id: 5,
-          name: "Елизавета Сергеевна",
+          name: "Movies",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
