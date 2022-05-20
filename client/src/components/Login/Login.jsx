@@ -1,5 +1,6 @@
 import React from 'react';
-import './Login.css'
+import './Login.css';
+import { useNavigate } from 'react-router-dom';
 
 function Login(props) {
 
@@ -8,6 +9,8 @@ function Login(props) {
   const addUser = (e) => {
 
     e.preventDefault();
+
+    const navigation = useNavigate()
 
     const data = { name: e.target.name.value, email: e.target.email.value, password: e.target.password.value }
 
@@ -20,6 +23,7 @@ function Login(props) {
       // .then(data => dispatch(addStudentsAC(data)))
       .then(data => console.log(data))
 
+    e.target.reset()
     // dispatch({type:"ADD_STUDENT",payload:data})
   }
 
