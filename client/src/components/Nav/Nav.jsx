@@ -5,7 +5,7 @@ function Nav() {
   return (
     <nav>
      <div className="nav-wrapper  brown lighten-2">
-      <Link to='/' className="brand-logo center black-text">Home</Link>
+      <Link to='/home' className="brand-logo center black-text">Home</Link>
       <ul id="nav-mobile">
         <li><Link to='/registration'><h5 className="black-text">Registration</h5></Link></li>
         <li><Link to='/login'><h5 className="black-text">Login</h5></Link></li>

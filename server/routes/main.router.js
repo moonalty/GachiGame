@@ -6,16 +6,18 @@ const saltRounds = 3;
 //
 
 //
-router.route("/").get(async (req, res) => {
-  console.log();
-
-  res.json({ lo: "wadwadawdawdawdwadawdawdawdaw" });
-})
+router.route("/home").get(async (req, res) => {
+  const questions = await Question.findAll();
+  console.log(questions);
+  // res.json(questions);
+  res.json(questions);
+});
 
 // //
 // router.route("/main").get((req, res) => {
 //   res.render("main");
 // });
+
 
 router.route('/gameForm')
 .get(async(req, res)=> {
@@ -28,6 +30,7 @@ router.route('/gameForm/themes/costs/:id')
   const costs = await Question.findAll({where: {id: req.params.id}})
   res.json({costs})
 }) 
+
 
 //
 // router.route("/login").get((req, res) => {
