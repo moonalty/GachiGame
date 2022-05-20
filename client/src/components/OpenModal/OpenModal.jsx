@@ -13,13 +13,15 @@ const OpenModal = ({ active, setActive, theme }) => {
   //   .then((data)=> console.log(data))
   //   .then((data) => dispatch(costsRenderAC(data)))
   // })
+
+  console.log('BUKA');
   return (
     <div
       className={active ? "modal active" : "modal"}
       onClick={() => setActive(false)}
     >
       <div className="modal__content" onClick={(e) => e.stopPropagation()}>
-        <QuestCard />
+        <QuestCard theme = {theme} />
       </div>
     </div>
   );
